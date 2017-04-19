@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Personal Website of Nimila Hiranya Samarasinghe">
     <meta name="author" content="Nimila Hiranya Samarasinghe">
-    <meta name="keywords" content="Nimila,Hiranya,Samarasinghe,Hiran,nhiranz,Hiranz,Nimila Hiranya,UIUX,Logo,Design,hSenid,Apptizer,Richmond College,Galle,Colombo,Sri Lanka,Informatics Institute of Technology,IIT,AIESEC">
+    <meta name="keywords"
+          content="Nimila,Hiranya,Samarasinghe,Hiran,nhiranz,Hiranz,Nimila Hiranya,UIUX,Logo,Design,hSenid,Apptizer,Richmond College,Galle,Colombo,Sri Lanka,Informatics Institute of Technology,IIT,AIESEC">
 
     <!-- Page title
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -27,6 +28,70 @@
     <link rel="stylesheet" href="assets/css/font-awesome.css">
     <link rel="stylesheet" href="assets/icons/Linea/styles.css"/>
     <link rel="stylesheet" href="assets/icons/Elegant/style.css"/>
+    <style>
+        /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+        @import url(http://fonts.googleapis.com/css?family=Raleway+Dots);
+        @import url(http://fonts.googleapis.com/css?family=Advent+Pro:400,200,700);
+        @import url(http://weloveiconfonts.com/api/?family=entypo);
+        /* entypo */
+        [class*="entypo-"]:before {
+            font-family: 'entypo', sans-serif;
+        }
+
+        section #services {
+            margin-left: -60px;
+            transform: translatez(0);
+        }
+
+        section #services h2 {
+            margin: 80px 0px 40px;
+            color: #444444;
+            font-size: 2.4em;
+            font-family: 'Raleway Dots', sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        section #services li {
+            padding: 0px 0;
+            width: 120px;
+            height: 140px;
+            display: inline-block;
+            margin: 20px;
+            list-style: none;
+        }
+
+        section #services li div {
+            width: 120px;
+            height: 120px;
+            color: #ffffff;
+            font-size: 3.4em;
+            text-align: center;
+            line-height: 120px;
+            background-color: #444444;
+            transition: all 0.5s ease;
+        }
+
+        section #services li div:hover {
+            transform: rotate(360deg);
+            border-radius: 100px;
+        }
+
+        section #services li span {
+            width: 120px;
+            height: 20px;
+            display: block;
+            padding: 15px 0px;
+            color: #fff;
+            /*font-family: 'Advent Pro', sans-serif;*/
+            /*text-transform: uppercase;*/
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 </head>
 
@@ -501,30 +566,41 @@
 
                 <div class="resume-content">
 
-                        <ul class="resume-list nop">
-                            <li>
-                                <b>Social Media</b>
-                                <p><a href="https://www.facebook.com/nHiRanZ" target="_blank"><i
-                                        class="fa fa-facebook fa-3x"></i> Facebook</a> | <a
-                                        href="https://www.twitter.com/nHiRanZ" target="_blank"><i
-                                        class="fa fa-twitter fa-3x"></i> Twitter</a> | <a
-                                        href="https://www.instagram.com/nhiranz" target="_blank"><i
-                                        class="fa fa-instagram fa-3x"></i> Instagram</a> | <a
-                                        href="https://lk.linkedin.com/in/nhiranz" target="_blank"><i
-                                        class="fa fa-linkedin fa-3x"></i> LinkedIn</a> | <a
-                                        href="https://www.github.com/nHiRanZ" target="_blank"><i
-                                        class="fa fa-github fa-3x"></i> GitHub</a></p>
 
-                            </li>
+                    <b>Social Media</b>
+                    <ul id='services'>
+                        <li>
+                            <a href="https://lk.linkedin.com/in/nhiranz" target="_blank">
+                                <div class='entypo-linkedin'></div>
+                                <span style="color: #444444">LinkedIn</span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com/nHiRanZ" target="_blank">
+                                <div class='entypo-twitter'></div>
+                                <span style="color: #444444">Twitter</span></a>
+                        </li>
+                        <li><a href="https://www.facebook.com/nHiRanZ" target="_blank">
+                            <div class='entypo-facebook'></div>
+                            <span style="color: #444444">Facebook</span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.github.com/nHiRanZ" target="_blank">
+                                <div class='entypo-github'></div>
+                                <span style="color: #444444">GitHub</span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/nhiranz" target="_blank">
+                                <div class='entypo-instagrem'></div>
+                                <span style="color: #444444">Instagram</span></a>
+                        </li>
+                    </ul>
 
-                            <li>
-                                <b>Email</b>
-                                <p><a href="mailto:nimilahiran@gmail.com?Subject=Hi there!" target="_top">nimilahiran@gmail.com</a>
-                                    | <a href="mailto:contact@thelogopatrol.com?Subject=Hi there!" target="_top">contact@thelogopatrol.com</a>
-                                </p>
-                            </li>
 
-                        </ul>
+                    <b>Email</b>
+                    <p><a href="mailto:nimilahiran@gmail.com?Subject=Hi there!" target="_top">nimilahiran@gmail.com</a>
+                        | <a href="mailto:contact@thelogopatrol.com?Subject=Hi there!" target="_top">contact@thelogopatrol.com</a>
+                    </p>
+
 
                 </div>
 
