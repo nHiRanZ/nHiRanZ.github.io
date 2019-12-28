@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>TweetVia by nHiRanZ</title>
+
+    <script type="text/javascript" src="codebird.js"></script>
 </head>
 <body>
 Tweet Via your own Twitter App
+
+<script type="text/javascript">
+    var cb = new Codebird;
+    cb.setConsumerKey("EDG2gEBsIuIeIxrvLnJ8ZZGfK", "goNiKtDpGRnt8BsmSEbWU0v2kmyMdxJNexq9BdcOgqgGXTZqOt");
+
+    cb.__call("statuses_update", { status: "Whohoo, I just tweeted!" }, function(
+        reply,
+        rate,
+        err
+    ) {
+        // ...
+    });
+</script>
+
 </body>
 </html>
