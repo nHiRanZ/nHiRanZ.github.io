@@ -56,12 +56,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
-    <script>
-        (function() {
-            document.getElementById("year").innerHTML = new Date().getFullYear();
-        })();
-    </script>
-
 </head>
 
 <!-- Body Start
@@ -564,7 +558,7 @@
             <div class="container">
 
                 <div class="footer-copyright col-md-7">
-                    <p>© <p id="year"></p> Nimila Hiranya Samarasinghe. Hosted with ♥ on <a
+                    <p>© <script>document.write(new Date().getFullYear())</script> Nimila Hiranya Samarasinghe. Hosted with ♥ on <a
                             href="https://github.com/nHiRanZ/nHiRanZ.github.io" target="_blank">Github <i
                             class="fa fa-github-alt"></i></a>.</p>
                 </div>
