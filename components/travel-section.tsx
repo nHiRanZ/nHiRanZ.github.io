@@ -11,6 +11,12 @@ const destinations = [
     description: "Exploring every corner of my beautiful island home.",
   },
   {
+    name: "United States",
+    tag: "Iconic",
+    image: "/images/travel-usa.jpg",
+    description: "Skyscrapers, city lights, and American landmarks.",
+  },
+  {
     name: "Maldives",
     tag: "Paradise",
     image: "/images/travel-maldives.jpg",
@@ -39,12 +45,6 @@ const destinations = [
     tag: "Heritage",
     image: "/images/travel-india.jpg",
     description: "Timeless architecture and vibrant culture.",
-  },
-  {
-    name: "United States",
-    tag: "Iconic",
-    image: "/images/travel-usa.jpg",
-    description: "Skyscrapers, city lights, and American landmarks.",
   },
 ]
 
