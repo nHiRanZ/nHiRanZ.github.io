@@ -40,6 +40,12 @@ const destinations = [
     image: "/images/travel-india.jpg",
     description: "Timeless architecture and vibrant culture.",
   },
+  {
+    name: "United States",
+    tag: "Iconic",
+    image: "/images/travel-usa.jpg",
+    description: "Skyscrapers, city lights, and American landmarks.",
+  },
 ]
 
 export function TravelSection() {
