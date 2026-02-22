@@ -16,8 +16,9 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
 })
 
-const siteTitle = 'Nimila Hiranya Samarasinghe | Software Engineer & Senior Technical Lead'
-const siteDescription = 'Nimila Hiranya Samarasinghe — Senior Technical Lead at Applova Inc. Software Engineer in Sri Lanka. 10+ years in Java, Android, React Native, Payment Integrations, POS & Kiosk Solutions, and REST APIs.'
+// Keep title under ~58 chars (~580px in SERP) for SEO
+const siteTitle = 'Nimila Hiranya | Senior Tech Lead & Software Engineer'
+const siteDescription = 'Senior Technical Lead at Applova Inc. Software Engineer in Sri Lanka. Java, React Native, payments & POS. 10+ years.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -71,6 +72,17 @@ export const metadata: Metadata = {
     },
   },
   category: 'technology',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/site.webmanifest',
   other: {
     'contact': 'nimilahiran@gmail.com',
     'geo.region': 'LK',
