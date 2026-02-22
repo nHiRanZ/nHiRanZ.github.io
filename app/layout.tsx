@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { PersonJsonLd } from '@/components/person-json-ld'
+import { ClarityProvider } from '@/components/clarity-provider'
 import './globals.css'
 
 const SITE_URL = 'https://nimila.online'
@@ -106,6 +107,7 @@ export default function RootLayout({
         <PersonJsonLd />
         {children}
         <Analytics />
+        <ClarityProvider />
       </body>
     </html>
   )
