@@ -6,6 +6,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  transpilePackages: ['react-kenburns-view'],
 }
 
 export default nextConfig
