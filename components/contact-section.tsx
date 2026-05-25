@@ -81,6 +81,11 @@ const socials = [
   },
 ]
 
+const emails = [
+  { address: 'hello@nimila.online', label: 'Email' },
+  { address: 'nimilahiran@gmail.com', label: 'Email' },
+]
+
 export function ContactSection() {
   return (
     <section id="contact" className="px-6 py-24 md:py-32">
@@ -107,20 +112,23 @@ export function ContactSection() {
             </p>
 
             <div className="flex flex-col gap-4">
-              <a
-                href="mailto:nimilahiran@gmail.com"
-                className="group flex items-center gap-4 rounded-lg border border-border bg-card p-4 transition-colors hover:border-primary/40"
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-secondary text-primary">
-                  <Mail size={18} />
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">Email</p>
-                  <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                    nimilahiran@gmail.com
-                  </p>
-                </div>
-              </a>
+              {emails.map((email) => (
+                <a
+                  key={email.address}
+                  href={`mailto:${email.address}`}
+                  className="group flex items-center gap-4 rounded-lg border border-border bg-card p-4 transition-colors hover:border-primary/40"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-secondary text-primary">
+                    <Mail size={18} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground">{email.label}</p>
+                    <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                      {email.address}
+                    </p>
+                  </div>
+                </a>
+              ))}
 
               <a
                 href="https://wa.me/94740133395"

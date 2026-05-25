@@ -10,7 +10,7 @@ const personJsonLd = {
     name: 'Applova Inc',
   },
   url: SITE_URL,
-  email: 'nimilahiran@gmail.com',
+  email: 'hello@nimila.online',
   telephone: '+94740133395',
   address: {
     '@type': 'PostalAddress',

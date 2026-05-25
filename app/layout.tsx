@@ -85,7 +85,7 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   other: {
-    'contact': 'nimilahiran@gmail.com',
+    'contact': 'hello@nimila.online',
     'geo.region': 'LK',
   },
 }
