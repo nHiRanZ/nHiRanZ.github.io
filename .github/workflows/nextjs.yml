@@ -97,12 +97,7 @@ jobs:
         run: |
           mkdir -p ./out/deal-scout-lk
           cp -r deal-scout-lk/frontend/dist/. ./out/deal-scout-lk/
-
-      - name: Add SPA 404 fallback for Deal Scout LK
-        run: cp ./out/deal-scout-lk/index.html ./out/deal-scout-lk/404.html
-
-      - name: Add no-trailing-slash redirect for /deal-scout-lk
-        run: printf '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=/deal-scout-lk/"></head><body><a href="/deal-scout-lk/">Redirecting</a></body></html>' > ./out/deal-scout-lk.html
+          cp ./out/deal-scout-lk/index.html ./out/deal-scout-lk/404.html
 
       # ───────────────────────────────────────────────────────────────────────
 
