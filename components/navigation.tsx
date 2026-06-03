@@ -3,22 +3,34 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown, FlaskConical } from "lucide-react"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const navLinks = [
-  { label: "Home", href: "/", hash: "#home" },
-  { label: "About", href: "/", hash: "#about" },
-  { label: "Resume", href: "/", hash: "#resume" },
-  { label: "Travel", href: "/", hash: "#travel" },
+  { label: "Home",    href: "/", hash: "#home" },
+  { label: "About",   href: "/", hash: "#about" },
+  { label: "Resume",  href: "/", hash: "#resume" },
+  { label: "Travel",  href: "/", hash: "#travel" },
   { label: "Contact", href: "/", hash: "#contact" },
 ]
-const demosLink = { label: "Demos", href: "/demos" }
+
+const labItems = [
+  { label: "React / React Native Libraries", href: "/demos" },
+  { label: "Deal Scout LK",                  href: "/deal-scout-lk/" },
+]
 
 export function Navigation() {
   const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
+
+  const isLabActive = labItems.some((item) => pathname.startsWith(item.href.replace(/\/$/, "")))
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,17 +90,34 @@ export function Navigation() {
               </li>
             )
           })}
+
+          {/* The Lab dropdown */}
           <li>
-            <Link
-              href={demosLink.href}
-              className={`text-sm tracking-wide transition-colors ${
-                pathname === "/demos"
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {demosLink.label}
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className={`flex items-center gap-1 text-sm tracking-wide transition-colors outline-none ${
+                  isLabActive
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <FlaskConical size={13} className="shrink-0" />
+                The Lab
+                <ChevronDown size={13} className="shrink-0 transition-transform duration-200 [[data-state=open]_&]:rotate-180" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="min-w-52">
+                {labItems.map((item) => (
+                  <DropdownMenuItem key={item.href} asChild>
+                    <Link
+                      href={item.href}
+                      className={pathname.startsWith(item.href.replace(/\/$/, "")) ? "text-primary" : ""}
+                    >
+                      {item.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </li>
         </ul>
 
@@ -126,18 +155,30 @@ export function Navigation() {
                 </li>
               )
             })}
+
+            {/* The Lab section in mobile */}
             <li>
-              <Link
-                href={demosLink.href}
-                className={`block rounded-md px-3 py-2 text-sm transition-colors ${
-                  pathname === "/demos"
-                    ? "text-primary bg-secondary"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                }`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {demosLink.label}
-              </Link>
+              <div className="flex items-center gap-1.5 px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">
+                <FlaskConical size={11} />
+                The Lab
+              </div>
+              <ul className="flex flex-col gap-1 pl-3">
+                {labItems.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className={`block rounded-md px-3 py-2 text-sm transition-colors ${
+                        pathname.startsWith(item.href.replace(/\/$/, ""))
+                          ? "text-primary bg-secondary"
+                          : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                      }`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </li>
           </ul>
         </div>
