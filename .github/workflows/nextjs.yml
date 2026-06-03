@@ -83,7 +83,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: nHiRanZ/deal-scout-lk
-          token: ${{ secrets.DEAL_SCOUT_PAT }}
           path: deal-scout-lk
 
       - name: Build Deal Scout LK frontend
