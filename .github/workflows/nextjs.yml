@@ -75,6 +75,31 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+
+      # ── Deal Scout LK ──────────────────────────────────────────────────────
+      - name: Checkout Deal Scout LK
+        uses: actions/checkout@v4
+        with:
+          repository: nHiRanZ/deal-scout-lk
+          path: deal-scout-lk
+
+      - name: Build Deal Scout LK frontend
+        working-directory: deal-scout-lk/frontend
+        env:
+          VITE_API_BASE: https://deal-scout-lk.onrender.com/api
+        run: |
+          npm ci
+          npm run build
+
+      - name: Copy Deal Scout LK into Pages output
+        run: |
+          mkdir -p ./out/deal-scout-lk
+          cp -r deal-scout-lk/frontend/dist/. ./out/deal-scout-lk/
+
+      - name: Add SPA 404 fallback for Deal Scout LK
+        run: cp ./out/deal-scout-lk/index.html ./out/deal-scout-lk/404.html
+      # ───────────────────────────────────────────────────────────────────────
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
