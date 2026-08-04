@@ -1,6 +1,8 @@
 "use client"
 
-import { Briefcase, GraduationCap, ExternalLink } from "lucide-react"
+import { Briefcase, GraduationCap, ExternalLink, FileText, Download } from "lucide-react"
+
+const RESUME_PDF = "/Nimila_Samarasinghe_Resume.pdf"
 
 const workExperience = [
   {
@@ -94,15 +96,34 @@ export function ResumeSection() {
           bringing ideas to life across the full stack.
         </p>
 
-        <a
-          href="https://linkedin.com/in/nhiranz"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mb-12 inline-flex items-center gap-2 text-sm text-primary transition-colors hover:text-primary/80"
-        >
-          View full profile on LinkedIn
-          <ExternalLink size={14} />
-        </a>
+        <div className="mb-12 flex flex-wrap items-center gap-4">
+          <a
+            href={RESUME_PDF}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-4 py-2 text-sm text-foreground transition-colors hover:border-primary/40 hover:text-primary"
+          >
+            <FileText size={14} />
+            View PDF resume
+          </a>
+          <a
+            href={RESUME_PDF}
+            download="Nimila_Samarasinghe_Resume.pdf"
+            className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-4 py-2 text-sm text-foreground transition-colors hover:border-primary/40 hover:text-primary"
+          >
+            <Download size={14} />
+            Download PDF
+          </a>
+          <a
+            href="https://linkedin.com/in/nhiranz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-primary transition-colors hover:text-primary/80"
+          >
+            View full profile on LinkedIn
+            <ExternalLink size={14} />
+          </a>
+        </div>
 
         <div className="grid gap-16 lg:grid-cols-2">
           {/* Work Experience */}
