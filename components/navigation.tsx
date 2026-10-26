@@ -23,6 +23,7 @@ const labItems = [
   { label: "React / React Native Libraries", href: "/demos" },
   { label: "Deal Scout LK",                  href: "/deal-scout-lk/" },
   { label: "Mail Formatter",                 href: "/mail-formatter" },
+  { label: "JSON Formatter",                 href: "/json-formatter" },
 ]
 
 export function Navigation() {
