@@ -21,6 +21,7 @@ const personJsonLd = {
     'https://github.com/nHiRanZ',
     'https://stackoverflow.com/users/2182809/nimila-hiranya',
     'https://linkedin.com/in/nhiranz',
+    'https://medium.com/@nHiRanZ',
     'https://instagram.com/nhiranz',
     'https://x.com/nhiranz',
     'https://tiktok.com/@nhiranz',
